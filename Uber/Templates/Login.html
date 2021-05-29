@@ -1,0 +1,26 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>User Login</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/Login.css' %}">
+</head>
+<body>
+	<a href="{% url 'Home' %}"><div style="display: block;"><img src="{% static 'images/leftarrow.png' %}" class="leftarrow">  Back To Home</div></a>
+	<div class="registrationdiv">
+		<form action="Login" method="post">
+			{% csrf_token %}
+			<input type="text" name="userNameorEmail" placeholder ="User Name/Email">
+			<input type="password" name="password" placeholder="Password">
+			<button>Login</button>
+		</form>
+	</div>
+	<div>
+		{% for message in messages%}
+		<h1>{{message}}</h1>
+		{%endfor%}
+	</div>
+
+</body>
+</html>

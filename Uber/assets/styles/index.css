@@ -1,0 +1,28 @@
+
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('U.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+nav ul{
+    list-style: none;
+    float: Right;
+}
+nav ul li{
+    display: inline-block;
+    padding:20px ;
+    font-size: Bold;
+	font-family: sans-serif;
+}
+nav ul li:hover{
+	color: seagreen;
+
+}
+nav ul li a{
+ 	text-decoration: none;
+ 	color: inherit;
+}

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>User Registration</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/Register.css' %}">
+</head>
+<body>
+	<a href="{% url 'Home' %}"><div style="display: block;"><img src="{% static 'images/leftarrow.png' %}" class="leftarrow">  Back To Home</div></a>
+	<div class="registrationdiv">
+		<form action="Register" method="post">
+			{% csrf_token%}
+			<input type="text" name="firstName" placeholder ="First Name">
+			<input type="text" name="lastName" placeholder ="Last Name">
+			<input type="text" name="userName" placeholder ="User Name">
+			<input type="email" name="email" placeholder="Email">
+			<input type="password" name="password" placeholder="Password">
+			<input type="password" name="confirmPassword" placeholder="Confirm Password">
+			<button>Register</button>
+		</form>
+		<div>
+			{%for message in messages%}
+			<h1>{{ message }}</h1>
+			{% endfor %}
+		</div>
+	</div>
+
+</body>
+</html>
